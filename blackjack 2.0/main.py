@@ -112,7 +112,14 @@ def generate_card_pictures(hand):
     
     return card_pictures
 
-def print_hands(list_of_hands):
+def print_hand(hand):
+    print
+    card_pictures = generate_card_pictures(hand)
+    for line in card_pictures:
+        print line
+    print
+
+def print_table(list_of_hands):
     number_of_players = get_number_of_players(list_of_hands)
     dealer_hand = list_of_hands[number_of_players]
 
@@ -172,7 +179,7 @@ def player_turn_manual(hand):
 
     is_turn_finished = False
     while not is_turn_finished:
-        print_list_of_hands(hands)
+        print_table(hands)
         print_hand(hand)
         decision = get_decision(hand)
 
